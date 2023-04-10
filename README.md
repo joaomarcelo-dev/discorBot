@@ -5,7 +5,7 @@ Um template de bot para o Discord feito com o discord.js
   1 - Para iniciar o sistema do Bot, primeiro deve ser criada uma conta especifica para ele no site do [discord developer](https://discord.com/developers/applications).
   Logo após o registro da conta, devem ser preenchidas as váreaveis de ambiente presentes no arquivo `.env` localizado na raiz do projeto.
   
-  ![](.src/img/example_env.png)
+  ![](./src/img/example_env.png)
   
   2 - Após preencher os arquivos com os dados necessários, inicie no terminal o comando `npm i`, para poder instalar as dependencias necessárias para que o BOT funcione,
   aguarde o processo de instalação das dependencias necessarias para pode continuar o processo de inicialização do BOT.
