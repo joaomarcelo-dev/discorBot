@@ -1,0 +1,20 @@
+{
+  "name": "botdiscord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node-dev ./src/app.js",
+    "deploy": "node ./src/deploy-commands.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-player": "^6.1.1",
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "isomorphic-unfetch": "^4.0.2",
+    "node-dev": "^8.0.0"
+  }
+}
