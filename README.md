@@ -17,7 +17,7 @@ Um template de BOT para o Discord feito com o discord.js
   ![](./src/img/example_init_bot.png)
  
   ### Adição de novos SlashCommands: 🔩
-  Para adicionar novos comandos de `/` e template já vem com uma pasta no destino `./scr/commands`, onde deveram ser criadas as novas interações.
+  Para adicionar novos comandos de `/` e template já vem com uma pasta no destino `./src/commands`, onde deveram ser criadas as novas interações.
   Para mandar fazer ‘upload’ dos novos comandos, o desenvolvedor deve digitar no terminal o comando `npm run deploy`, que por sua vez, iniciara o arquivo `deploy-commands.js`
   responsável por realizar essa tarefa.
  
