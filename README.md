@@ -25,3 +25,5 @@ Um template de BOT para o Discord feito com o discord.js
  
   ### OBS: 🚨
   #### 📗 - Divirta-se desenvolvendo novas funcionalidades para o seu próprio BOT!!! Novas atualizações podem aparecer no template, então fique de olho 👀.
+
+  #### [Aqui](https://discord.js.org/#/) está o link do site oficial do Discord.js, para que vc busque por mais informações.
