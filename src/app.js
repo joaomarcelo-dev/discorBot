@@ -69,3 +69,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
         console.log(`Comando ${command.data.name} executado`);
     }
 });
+
+function startBot() {
+    client.login('YOUR_BOT_TOKEN');
+  }
+  
+  module.exports = startBot;
