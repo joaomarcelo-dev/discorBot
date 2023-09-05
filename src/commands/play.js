@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { joinVoiceChannel, createAudioPlayer, createAudioResource, NoSubscriberBehavior } = require('@discordjs/voice');
+const { joinVoiceChannel, createAudioPlayer, createAudioResource, NoSubscriberBehavior, VoiceConnectionStatus } = require('@discordjs/voice');
 const ytdl = require('ytdl-core');
 
 module.exports = {
@@ -38,19 +38,32 @@ module.exports = {
                 noSubscriber: NoSubscriberBehavior.Play
             }
         });
+        
+        console.log(VoiceConnectionStatus.Ready);
+        console.log(connection.state.status);
+
+        if (!ytdl.validateURL(youtubeUrl)) {
+            return interaction.reply('A URL fornecida não é válida.');
+        }
+
+        if (connection.state.status === VoiceConnectionStatus.Ready) {
+            return interaction.reply('Infelizmente o vagabundo do meu desenvolvedor não adicionou suporte a uma fila de reprodução, então não é possível tocar mais de uma música por vez.');
+        }
 
         player.setMaxListeners(10);
 
         connection.subscribe(player);
 
-        // Use a função ytdl para fazer o download do áudio do vídeo do YouTube
         const stream = ytdl(youtubeUrl, { filter: 'audioonly' });
-
-        console.log(stream);
 
         const audioResource = createAudioResource(stream);
 
-        player.play(audioResource);
+        try {
+            player.play(audioResource);
+        } catch (error) {
+            console.error(error);
+            interaction.reply(`Error: ${error.message}`);
+        }
 
         interaction.reply(
             `
@@ -61,10 +74,14 @@ module.exports = {
         );
 
         player.on('error', (error) => {
-            console.error(`Error: ${error.message} with resource ${error.resource.metadata.title}`);
+            console.error(`Error: ${error.message}`);
             interaction.reply(`Error: ${error.message} with resource ${error.resource.metadata.title}`);
         });
 
+        player.on('idle', () => {
+            console.log('Reprodução finalizada');
+            connection.destroy();
+        });
     }
 };
 
