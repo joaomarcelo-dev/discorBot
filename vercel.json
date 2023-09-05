@@ -5,16 +5,5 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "src/app.js"
-    }
-  ],
-  "type": "static",
-  "functions": {
-    "api/*": {
-      "runtime": "@vercel/node"
-    }
-  }
+  "type": "static"
 }
