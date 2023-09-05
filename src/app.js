@@ -69,3 +69,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
         console.log(`Comando ${command.data.name} executado`);
     }
 });
+
+const botStartTest = ()  => {
+    client.login(TOKEN);
+}
+
+module.exports = botStartTest;
