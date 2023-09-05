@@ -10,5 +10,11 @@
       "src": "/(.*)",
       "dest": "src/app.js"
     }
-  ]
+  ],
+  "type": "static",
+  "functions": {
+    "api/*": {
+      "runtime": "@vercel/node"
+    }
+  }
 }
