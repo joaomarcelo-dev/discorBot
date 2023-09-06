@@ -61,9 +61,6 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 });
 
-const startBot = () => {
-    client.login(TOKEN);
-}
 
+client.login(TOKEN);
 
-module.exports = startBot;
